@@ -1,6 +1,7 @@
 package com.demoqa.tests;
 
 import com.demoqa.pages.RegistrationPage;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.demoqa.utils.UserVariables.*;
@@ -9,6 +10,7 @@ public class PracticeFormWithFakerTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
+    @Tag("remote")
     void fillFormTest() {
         registrationPage
                 .openPage()
