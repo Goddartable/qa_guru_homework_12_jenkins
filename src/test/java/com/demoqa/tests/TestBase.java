@@ -1,6 +1,8 @@
 package com.demoqa.tests;
 
 import com.codeborne.selenide.Configuration;
+import com.demoqa.attachments.Attachments;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -19,4 +21,9 @@ public class TestBase {
 
     }
 
+    @AfterAll
+    static void afterAllTests() {
+        Attachments.addVideo();
+
+    }
 }
