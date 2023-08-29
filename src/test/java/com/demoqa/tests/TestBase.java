@@ -1,7 +1,8 @@
 package com.demoqa.tests;
 
 import com.codeborne.selenide.Configuration;
-import com.demoqa.attachments.Attachments;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -9,6 +10,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class TestBase {
     @BeforeAll
     static void beforeAll() {
+        SelenideLogger.addListener("Allure", new AllureSelenide());
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
@@ -23,7 +25,7 @@ public class TestBase {
 
     @AfterAll
     static void afterAllTests() {
-        Attachments.addVideo();
+        guru.qa.attachments.Attachments.addVideo();
 
     }
 }
