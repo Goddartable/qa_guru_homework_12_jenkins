@@ -38,8 +38,25 @@ public class ReportAttachments {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
     }
 
-    @Attachment(value = "Мой любимый скриншот", type = "image/png", fileExtension = "png")
+    @Attachment(value = "Скриншот с результатами", type = "image/png", fileExtension = "png")
     public static byte[] attachScreenshot() {
         return ((TakesScreenshot) WebDriverRunner.getWebDriver()).getScreenshotAs(OutputType.BYTES);
+    }
+
+    @Attachment(value = "Page source", type = "text/plain")
+    public static byte[] pageSource() {
+        return getWebDriver().getPageSource().getBytes(StandardCharsets.UTF_8);
+    }
+
+    @Attachment(value = "{attachName}", type = "text/plain")
+    public static String attachAsText(String attachName, String message) {
+        return message;
+    }
+
+    public static void browserConsoleLogs() {
+        attachAsText(
+                "Browser console logs",
+                String.join("\n", Selenide.getWebDriverLogs(BROWSER))
+        );
     }
 }
