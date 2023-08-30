@@ -17,7 +17,7 @@ public class TestBase {
         Configuration.pageLoadStrategy = "eager";
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
-     /*   DesiredCapabilities capabilities = new DesiredCapabilities();
+        DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
@@ -26,9 +26,6 @@ public class TestBase {
 
     @AfterAll
     static void afterAllTests() {
-        ReportAttachments.attachScreenshot();
-        ReportAttachments.pageSource();
-        ReportAttachments.browserConsoleLogs();
         ReportAttachments.addVideo();
-    }*/
-}}
+    }
+}
