@@ -13,7 +13,7 @@ import java.nio.charset.StandardCharsets;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
-public class TestAttachments {
+public class ReportAttachments {
 
     @Attachment(value = "Скриншот результатов общего вывода", type = "image/png", fileExtension = "png")
     public static byte[] attachScreenshot() {
