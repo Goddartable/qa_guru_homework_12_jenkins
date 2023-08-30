@@ -5,7 +5,7 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import guru.qa.attachments.Attachments;
+import com.demoqa.attachments.TestAttachments;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TestBase {
@@ -26,9 +26,9 @@ public class TestBase {
 
     @AfterAll
     static void afterAllTests() {
-        Attachments.attachScreenshot();
-        Attachments.pageSource();
-        Attachments.browserConsoleLogs();
-        Attachments.addVideo();
+        TestAttachments.attachScreenshot();
+        TestAttachments.pageSource();
+        TestAttachments.browserConsoleLogs();
+        TestAttachments.addVideo();
     }
 }

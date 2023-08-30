@@ -13,7 +13,7 @@ public class PracticeFormWithFakerTest extends TestBase {
     @Tag("remote")
     void fillFormTest() {
         registrationPage
-                .openPage()
+                .openDemoPage()
                 .removeADS()
                 .setFirstName(userFirstName)
                 .setLastName(userLastName)

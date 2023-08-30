@@ -26,7 +26,7 @@ public class RegistrationPage {
             setCityInput = $("#city"),
             submit = $("#submit");
 
-    public RegistrationPage openPage() {
+    public RegistrationPage openDemoPage() {
         open("/automation-practice-form");
         return this;
     }

@@ -1,4 +1,4 @@
-package guru.qa.attachments;
+package com.demoqa.attachments;
 
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
@@ -13,7 +13,8 @@ import java.nio.charset.StandardCharsets;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
-public class Attachments {
+public class TestAttachments {
+
     @Attachment(value = "Скриншот результатов общего вывода", type = "image/png", fileExtension = "png")
     public static byte[] attachScreenshot() {
         return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
