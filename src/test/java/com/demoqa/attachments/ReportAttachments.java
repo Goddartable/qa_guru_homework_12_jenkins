@@ -1,6 +1,7 @@
 package com.demoqa.attachments;
 
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -35,5 +36,10 @@ public class ReportAttachments {
 
     public static String getSessionId(){
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
+    }
+
+    @Attachment(value = "Мой любимый скриншот", type = "image/png", fileExtension = "png")
+    public static byte[] attachScreenshot() {
+        return ((TakesScreenshot) WebDriverRunner.getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
 }
