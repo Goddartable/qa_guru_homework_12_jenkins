@@ -1,8 +1,6 @@
 package com.demoqa.tests;
 
 import com.demoqa.pages.RegistrationPage;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -14,7 +12,6 @@ public class PracticeFormWithFakerTest extends TestBase {
 
     @Test
     @Tag("remote")
-    @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Заполнение формы сайта demoqa.com случайными данными с проверкой вывода в модальное окно")
     void fillFormTest() {
         registrationPage
