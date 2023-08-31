@@ -34,7 +34,7 @@ public class TestBase {
         ReportAttachments.pageSource();
         ReportAttachments.browserConsoleLogs();
         ReportAttachments.attachScreenshot();
-        ReportAttachments.addVideo();
+        //ReportAttachments.addVideo();
     }
 
 
