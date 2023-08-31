@@ -17,7 +17,6 @@ public class TestBase {
 
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
-        Configuration.holdBrowserOpen = true;
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -27,12 +26,14 @@ public class TestBase {
 
     }
 
-    @AfterAll
-    static void afterAllTests() {
-        ReportAttachments.addVideo();
-        ReportAttachments.attachScreenshot();
+    @AfterEach
+    void afterEachTest() {
+        SelenideLogger.addListener("Allure", new AllureSelenide());
+        Selenide.closeWebDriver();
         ReportAttachments.pageSource();
         ReportAttachments.browserConsoleLogs();
+        ReportAttachments.attachScreenshot();
+        ReportAttachments.addVideo();
     }
 
 }
