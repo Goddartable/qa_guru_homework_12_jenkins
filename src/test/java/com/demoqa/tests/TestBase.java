@@ -13,7 +13,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class TestBase {
     @BeforeAll
     static void beforeAll() {
-        SelenideLogger.addListener("Allure", new AllureSelenide());
 
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
@@ -34,7 +33,7 @@ public class TestBase {
         ReportAttachments.pageSource();
         ReportAttachments.browserConsoleLogs();
         ReportAttachments.attachScreenshot();
-        //ReportAttachments.addVideo();
+        ReportAttachments.addVideo();
     }
 
 
